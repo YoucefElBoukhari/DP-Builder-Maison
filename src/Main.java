@@ -1,17 +1,23 @@
 public class Main {
     public static void main(String[] args) {
-        PizzaDirector director = new PizzaDirector();
+        DirecteurConstruction directeur = new DirecteurConstruction();
 
-        // Créez une pizza italienne.
-        PizzaBuilder italianPizzaBuilder = new ItalianPizzaBuilder();
-        director.constructPizza(italianPizzaBuilder);
-        Pizza italianPizza = italianPizzaBuilder.getPizza();
-        System.out.println("Italian Pizza: " + italianPizza);
+        // Construire une maison normale.
+        ConstructeurMaison constructeurMaisonNormale = new ConstructeurMaisonNormale();
+        directeur.construireMaison(constructeurMaisonNormale);
+        Maison maisonNormale = constructeurMaisonNormale.obtenirMaison();
+        System.out.println("Maison Normale : " + maisonNormale);
 
-        // Créez une pizza mexicaine.
-        PizzaBuilder mexicanPizzaBuilder = new MexicanPizzaBuilder();
-        director.constructPizza(mexicanPizzaBuilder);
-        Pizza mexicanPizza = mexicanPizzaBuilder.getPizza();
-        System.out.println("Mexican Pizza: " + mexicanPizza);
+        // Construire une maison en bois.
+        ConstructeurMaison constructeurMaisonBois = new ConstructeurMaisonBois();
+        directeur.construireMaison(constructeurMaisonBois);
+        Maison maisonBois = constructeurMaisonBois.obtenirMaison();
+        System.out.println("Maison en Bois : " + maisonBois);
+
+        // Construire une grande maison.
+        ConstructeurMaison constructeurGrandeMaison = new ConstructeurGrandeMaison();
+        directeur.construireMaison(constructeurGrandeMaison);
+        Maison grandeMaison = constructeurGrandeMaison.obtenirMaison();
+        System.out.println("Grande Maison : " + grandeMaison);
     }
 }
